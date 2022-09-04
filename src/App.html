@@ -3,10 +3,25 @@
     <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link>
   </nav>
-  <Props1 name="props1"/>
-  <Props2 name="props2"/>
-  <Method/>
-  <Watcher/>
-  <Form1/>
+<!--  <Props1 name="props1"/>-->
+<!--  <Props2 name="props2"/>-->
+<!--  <Method/>-->
+<!--  <Watcher/>-->
+<!--  <Form1/>-->
+  <CallEmit :name="name" @CallEmit="callMe" />
+  <CallMethod :name="name" :call-method="callMe" />
+  <CallParent :name="name" />
+  <Sender />
+  <Receiver />
+  <hr/>
+  <h1>Counter1</h1>
+  <p>{{ count }}</p>
+  <p>{{ doubleCount }}</p>
+  <p>
+    <input type="button" value="+1 (mutation)" @click="increment(1)">
+  </p>
+  <p>
+    <input type="button" value="-1 (action)" @click="inc(-1)">
+  </p>
   <router-view></router-view>
 </div>
